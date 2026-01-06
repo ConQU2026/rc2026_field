@@ -38,7 +38,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         
-    ], ['resource', 'launch', 'urdf', 'config', 'rviz']),
+    ], ['resource', 'launch', 'urdf', 'config', 'rviz', 'models', 'worlds', 'meshes']),
     
     install_requires=['setuptools'],
     zip_safe=True,

@@ -163,34 +163,26 @@
   <origin xyz="0.5 0 0.50" rpy="0 1.5708 0" />
 </joint>
 
-<joint name="spin_1" type="continuous">
+<joint name="spin_1" type="fixed">
   <origin xyz="0.225 -0.27 0.01" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="wheel_1_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
-  <dynamics damping="1.0" friction="1.0"/>
 </joint>
 
-<joint name="spin_2" type="continuous">
+<joint name="spin_2" type="fixed">
   <origin xyz="-0.225 -0.27 0.01" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="wheel_2_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
-  <dynamics damping="1.0" friction="1.0"/>
 </joint>
-<joint name="spin_3" type="continuous">
+<joint name="spin_3" type="fixed">
   <origin xyz="-0.225 0.27 0.01" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="wheel_3_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
-  <dynamics damping="1.0" friction="1.0"/>
 </joint>
-<joint name="spin_4" type="continuous">
+<joint name="spin_4" type="fixed">
   <origin xyz="0.225 0.27 0.01" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="wheel_4_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
-  <dynamics damping="1.0" friction="1.0"/>
 </joint>
 
 
