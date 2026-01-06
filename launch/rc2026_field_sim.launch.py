@@ -13,7 +13,7 @@ def generate_launch_description():
     rc2026_field_pkg = FindPackageShare('rc2026_field')
     gz_launch_path = PathJoinSubstitution([gazebo_ros_pkg, 'launch', 'gazebo.launch.py'])
     
-    world_path = PathJoinSubstitution([rc2026_field_pkg, 'resource', 'worlds', 'robocon2026_world', 'world.sdf'])
+    # world_path = PathJoinSubstitution([rc2026_field_pkg, 'resource', 'worlds', 'robocon2026_world', 'world.sdf'])
     rviz_config_path = PathJoinSubstitution([rc2026_field_pkg, 'rviz', 'field.rviz'])
     xacro_file = PathJoinSubstitution([rc2026_field_pkg, 'urdf', 'R2.xacro'])
     robot_description = Command(['xacro ', xacro_file])
@@ -76,16 +76,16 @@ def generate_launch_description():
 
     ld = LaunchDescription()
 
-    ld.add_action(AppendEnvironmentVariable(
-        name='GAZEBO_MODEL_PATH',
-        value=PathJoinSubstitution([rc2026_field_pkg, 'resource', 'worlds'])
-    ))
+    # ld.add_action(AppendEnvironmentVariable(
+    #     name='GAZEBO_MODEL_PATH',
+    #     value=PathJoinSubstitution([rc2026_field_pkg, 'resource', 'worlds'])
+    # ))
 
 
     ld.add_action(IncludeLaunchDescription(
         PythonLaunchDescriptionSource(gz_launch_path),
         launch_arguments={
-            'world': world_path,
+            # 'world': world_path,
             'extra_gazebo_args': '--verbose',
         }.items(),
     ))

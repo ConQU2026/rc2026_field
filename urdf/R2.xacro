@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 <robot name="R2" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find ros2_livox_simulation)/urdf/mid360.xacro" />
-<xacro:include filename="$(find r2_description)/urdf/materials.xacro" />
+<!-- <xacro:include filename="$(find ros2_livox_simulation)/urdf/mid360.xacro" /> -->
+<xacro:include filename="$(find rc2026_field)/urdf/materials.xacro" />
 <!-- <xacro:include filename="$(find r2_description)/urdf/R2.trans" /> -->
-<xacro:include filename="$(find r2_description)/urdf/R2.gazebo" />
+<xacro:include filename="$(find rc2026_field)/urdf/R2.gazebo" />
 <link name="base_link">
   <inertial>
     <origin xyz="0.013939690526257072 -0.000368559794553403 0.02322444965726985" rpy="0 0 0"/>
@@ -14,14 +14,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -35,7 +35,7 @@
   <visual>
     <origin xyz="-0.225 0.27 -0.01" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
@@ -56,7 +56,7 @@
   <visual>
     <origin xyz="0.225 0.27 -0.01" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
@@ -77,7 +77,7 @@
   <visual>
     <origin xyz="0.225 -0.27 -0.01" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
@@ -98,7 +98,7 @@
   <visual>
     <origin xyz="-0.225 -0.27 -0.01" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
@@ -121,21 +121,21 @@
   <visual>
     <origin xyz="-0.32015 0.30715 -0.151" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/mid360_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/mid360_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.32015 0.30715 -0.151" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/mid360_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/mid360_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<xacro:mid360 name="livox" parent="mid360_1" topic="/livox/lidar">
+<!-- <xacro:mid360 name="livox" parent="mid360_1" topic="/livox/lidar">
     <origin xyz="0 0 0" rpy="0 0 0"/>
-</xacro:mid360>
+</xacro:mid360> -->
 
 <link name="camera_link">
   <visual>
@@ -160,7 +160,7 @@
 <joint name="camera_joint" type="fixed">
   <parent link="base_link" />
   <child link="camera_link" />
-  <origin xyz="0.5 0 0.50" rpy="0 1.5708 0" />
+  <origin xyz="0.5 0 0.2" rpy="0 0 0" />
 </joint>
 
 <joint name="spin_1" type="continuous">
@@ -192,8 +192,6 @@
   <axis xyz="0.0 1.0 0.0"/>
   <dynamics damping="1.0" friction="1.0"/>
 </joint>
-
-
 
 <joint name="slide_11" type="fixed">
   <origin xyz="0.32015 -0.30715 0.151" rpy="0 0 0"/>
