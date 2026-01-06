@@ -1,0 +1,102 @@
+<sdf version='1.7'>
+  <world name='robocon2026_world_scene'>
+    <model name='ground_plane'>
+      <static>1</static>
+    </model>
+    <light name='sun_main1' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>0.5 0.1 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <light name='sun_main2' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>0.5 0.1 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <light name='sun_main3' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>0.5 0.1 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <light name='sun_main4' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>0.5 0.1 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <scene>
+      <ambient>0.2 0.2 0.2 1</ambient>
+      <background>0.4 0.4 0.4 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <model name='robocon2026_field'>
+      <static>1</static>
+      <pose>0 0 0.01 0 -0 0</pose>
+      <link name='arena_link'>
+        <collision name='arena_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://robocon2026_world/meshes/robocon2026.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='arena_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://robocon2026_world/meshes/robocon2026.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+   
+  </world>
+
+</sdf>
