@@ -2,9 +2,9 @@
 <robot name="R2" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find ros2_livox_simulation)/urdf/mid360.xacro" />
-<xacro:include filename="$(find r2_description)/urdf/materials.xacro" />
-<!-- <xacro:include filename="$(find r2_description)/urdf/R2.trans" /> -->
-<xacro:include filename="$(find r2_description)/urdf/R2.gazebo" />
+<xacro:include filename="$(find rc2026_field)/urdf/materials.xacro" />
+<!-- <xacro:include filename="$(find rc2026_field)/urdf/R2.trans" /> -->
+<xacro:include filename="$(find rc2026_field)/urdf/R2.gazebo" />
 <link name="base_link">
   <inertial>
     <origin xyz="0.013939690526257072 -0.000368559794553403 0.02322444965726985" rpy="0 0 0"/>
@@ -14,14 +14,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -35,7 +35,7 @@
   <visual>
     <origin xyz="-0.225 0.27 -0.01" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
@@ -56,7 +56,7 @@
   <visual>
     <origin xyz="0.225 0.27 -0.01" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
@@ -77,7 +77,7 @@
   <visual>
     <origin xyz="0.225 -0.27 -0.01" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
@@ -98,7 +98,7 @@
   <visual>
     <origin xyz="-0.225 -0.27 -0.01" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
@@ -121,14 +121,14 @@
   <visual>
     <origin xyz="-0.32015 0.30715 -0.151" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/mid360_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/mid360_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.32015 0.30715 -0.151" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find r2_description)/meshes/mid360_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rc2026_field)/meshes/mid360_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
