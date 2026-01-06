@@ -72,8 +72,6 @@ def generate_launch_description():
 
 
 
-
-
     ld = LaunchDescription()
 
     # ld.add_action(AppendEnvironmentVariable(
