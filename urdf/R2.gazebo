@@ -163,7 +163,7 @@
 <gazebo reference="mid360_1">
   <sensor name="lidar" type="ray">
     <always_on>true</always_on>
-    <visualize>true</visualize>
+    <visualize>false</visualize>
     <update_rate>10</update_rate>
     <ray>
       <scan>

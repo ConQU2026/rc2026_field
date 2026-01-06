@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="target">
+
+  <!-- Materials -->
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+  <material name="purple">
+    <color rgba="0.5 0 0.5 1"/>
+  </material>
+
+  <!-- Properties -->
+  <xacro:property name="box_size" value="0.5"/>
+  <xacro:property name="marker_radius" value="0.03"/>
+  <xacro:property name="marker_offset_x" value="0.25"/> <!-- Half of box size -->
+  <xacro:property name="marker_offset_y" value="0.2"/>
+  <xacro:property name="marker_offset_z" value="0.2"/>
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="${1.0/12.0 * 1.0 * (box_size*box_size + box_size*box_size)}" 
+               ixy="0" ixz="0" 
+               iyy="${1.0/12.0 * 1.0 * (box_size*box_size + box_size*box_size)}" 
+               iyz="0" 
+               izz="${1.0/12.0 * 1.0 * (box_size*box_size + box_size*box_size)}"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="${box_size} ${box_size} ${box_size}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${box_size} ${box_size} ${box_size}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/White</material>
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+  </gazebo>
+
+  <!-- Marker Macro -->
+  <xacro:macro name="marker" params="suffix y_mult z_mult">
+    <link name="marker_${suffix}">
+      <visual>
+        <geometry>
+          <sphere radius="${marker_radius}"/>
+        </geometry>
+        <material name="purple"/>
+      </visual>
+    </link>
+    <joint name="joint_marker_${suffix}" type="fixed">
+      <parent link="base_link"/>
+      <child link="marker_${suffix}"/>
+      <origin xyz="${marker_offset_x} ${marker_offset_y * y_mult} ${marker_offset_z * z_mult}" rpy="0 0 0"/>
+    </joint>
+    <gazebo reference="marker_${suffix}">
+      <material>Gazebo/Purple</material>
+    </gazebo>
+  </xacro:macro>
+
+  <!-- Instantiate Markers -->
+  <xacro:marker suffix="tl" y_mult="1" z_mult="1"/>
+  <xacro:marker suffix="tr" y_mult="-1" z_mult="1"/>
+  <xacro:marker suffix="bl" y_mult="1" z_mult="-1"/>
+  <xacro:marker suffix="br" y_mult="-1" z_mult="-1"/>
+
+  <!-- Planar Move Plugin -->
+  <gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20.0</odometryRate>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>
+
+</robot>

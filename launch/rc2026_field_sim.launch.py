@@ -13,7 +13,9 @@ def generate_launch_description():
     rc2026_field_pkg = FindPackageShare('rc2026_field')
     gz_launch_path = PathJoinSubstitution([gazebo_ros_pkg, 'launch', 'gazebo.launch.py'])
     
-    # world_path = PathJoinSubstitution([rc2026_field_pkg, 'resource', 'worlds', 'robocon2026_world', 'world.sdf'])
+    controller_config = PathJoinSubstitution([rc2026_field_pkg, 'config', 'controller.yaml'])
+
+    world_path = PathJoinSubstitution([rc2026_field_pkg, 'resource', 'homework.world'])
     rviz_config_path = PathJoinSubstitution([rc2026_field_pkg, 'rviz', 'field.rviz'])
     xacro_file = PathJoinSubstitution([rc2026_field_pkg, 'urdf', 'R2.xacro'])
     robot_description = Command(['xacro ', xacro_file])
@@ -45,8 +47,8 @@ def generate_launch_description():
         arguments=[
             '-entity', 'R2',
             '-topic', 'robot_description',
-            '-x', '3.5',
-            '-y', '3.5',
+            '-x', '1.0',
+            '-y', '1.0',
             '-z', '0.0',
         ],
         output='screen'
@@ -70,20 +72,64 @@ def generate_launch_description():
         parameters=[{'use_sim_time': True}]
     )
 
+    # Values for Target
+    target_xacro_path = PathJoinSubstitution([rc2026_field_pkg, 'urdf', 'target.xacro'])
+    
+    # Process Xacro
+    target_description = Command(['xacro ', target_xacro_path])
+
+    # Target State Publisher (to handle robot_description parameter)
+    target_state_publisher_node = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        name='target_state_publisher',
+        namespace='target',
+        output='screen',
+        parameters=[{
+            'robot_description': target_description,
+            'use_sim_time': True
+        }]
+    )
+
+    target_spawn_node = Node(
+        package='gazebo_ros',
+        executable='spawn_entity.py',
+        arguments=[
+            '-entity', 'target',
+            '-topic', '/target/robot_description',
+            '-x', '-2.0',
+            '-y', '-2.0',
+            '-z', '0.5',
+            '-robot_namespace', 'target'
+        ],
+        output='screen'
+    )
+
+    target_controller_node = Node(
+        package='rc2026_field',
+        executable='target_controller',
+        name='target_controller',
+        namespace='target',
+        output='screen',
+        parameters=[
+            controller_config,
+            {'use_sim_time': True}
+        ]
+    )
 
 
     ld = LaunchDescription()
 
-    # ld.add_action(AppendEnvironmentVariable(
-    #     name='GAZEBO_MODEL_PATH',
-    #     value=PathJoinSubstitution([rc2026_field_pkg, 'resource', 'worlds'])
-    # ))
+    ld.add_action(AppendEnvironmentVariable(
+        name='GAZEBO_MODEL_PATH',
+        value=PathJoinSubstitution([rc2026_field_pkg, 'resource'])
+    ))
 
 
     ld.add_action(IncludeLaunchDescription(
         PythonLaunchDescriptionSource(gz_launch_path),
         launch_arguments={
-            # 'world': world_path,
+            'world': world_path,
             'extra_gazebo_args': '--verbose',
         }.items(),
     ))
@@ -94,5 +140,8 @@ def generate_launch_description():
     ld.add_action(urdf_spawn_node)
     # ld.add_action(rviz_node)
     ld.add_action(static_tf)
+    ld.add_action(target_state_publisher_node)
+    ld.add_action(target_spawn_node)
+    ld.add_action(target_controller_node)
 
     return ld

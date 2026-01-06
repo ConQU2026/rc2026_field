@@ -53,6 +53,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'target_controller = rc2026_field.target_controller:main',
         ],
     },
 )

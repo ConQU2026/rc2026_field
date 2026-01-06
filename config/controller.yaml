@@ -1,0 +1,4 @@
+/target/target_controller:
+  ros__parameters:
+    radius: 2.0
+    speed: 0.6
