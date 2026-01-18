@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='utf-8'?>
 <sdf version="1.6">
   <model name="red_fake_KFS">
     <static>false</static>
@@ -13,17 +13,19 @@
       </inertial>
       <collision name="collision">
         <geometry>
-          <mesh>
-            <uri>model://red_fake_KFS/meshes/model.dae</uri>
-          </mesh>
-        </geometry>
+          <box><size>0.35 0.35 0.35</size></box></geometry>
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh>
-            <uri>model://red_fake_KFS/meshes/model.dae</uri>
-          </mesh>
+          <box><size>0.35 0.35 0.35</size></box>
         </geometry>
+        <material>
+          <script>
+            <uri>model://red_fake_KFS/materials/scripts</uri>
+            <uri>model://red_fake_KFS/materials/textures</uri>
+            <name>RoboCon/red_fake_KFS</name>
+          </script>
+        </material>
       </visual>
     </link>
   </model>

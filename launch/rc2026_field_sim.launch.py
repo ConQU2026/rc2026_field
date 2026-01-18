@@ -15,42 +15,6 @@ def generate_launch_description():
     
     world_path = PathJoinSubstitution([rc2026_field_pkg, 'worlds', 'robocon2026.world'])
     rviz_config_path = PathJoinSubstitution([rc2026_field_pkg, 'rviz', 'field.rviz'])
-    xacro_file = PathJoinSubstitution([rc2026_field_pkg, 'urdf', 'R2.xacro'])
-    robot_description = Command(['xacro ', xacro_file])
-
-
-    robot_state_publisher_node = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        name='robot_state_publisher',
-        output='screen',
-        parameters=[
-            {'robot_description': robot_description},
-            {'use_sim_time': True}
-        ]
-    )
-
-    joint_state_publisher_node = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-     
-        name='joint_state_publisher',
-        output='screen',
-        parameters=[{'use_sim_time': True}]
-    )
-
-    urdf_spawn_node = Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
-        arguments=[
-            '-entity', 'R2',
-            '-topic', 'robot_description',
-            '-x', '3.5',
-            '-y', '3.5',
-            '-z', '0.065',
-        ],
-        output='screen'
-    )
 
     # rviz_node = Node(
     #     package='rviz2',
@@ -61,14 +25,8 @@ def generate_launch_description():
     #     parameters=[{'use_sim_time': True}]
     #)
 
-    static_tf = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='static_transform_publisher',
-        arguments=['-0.32015', '0.30715', '-0.151', '0', '0', '0', 'body', 'base_link'],
-        output='screen',
-        parameters=[{'use_sim_time': True}]
-    )
+
+
 
 
 
@@ -89,10 +47,7 @@ def generate_launch_description():
     ))
 
 
-    ld.add_action(robot_state_publisher_node)
-    ld.add_action(joint_state_publisher_node)
-    ld.add_action(urdf_spawn_node)
-    # ld.add_action(rviz_node)
-    ld.add_action(static_tf)
+
+
 
     return ld

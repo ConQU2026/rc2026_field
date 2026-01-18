@@ -7,7 +7,7 @@
       <pose>0 0 20 0 -0 0</pose>
       <diffuse>255 255 255 1</diffuse>
       <specular>0.3 0.3 0.3 1</specular>
-      <direction>0.5 0.1 -1</direction>
+      <direction>0.5 0.5 -1</direction>
       <cast_shadows>1</cast_shadows>
       <attenuation>
         <range>1000</range>
@@ -20,7 +20,7 @@
       <pose>0 0 20 0 -0 0</pose>
       <diffuse>255 255 255 1</diffuse>
       <specular>0.3 0.3 0.3 1</specular>
-      <direction>0.5 0.1 -1</direction>
+      <direction>-0.5 0.5 -1</direction>
       <cast_shadows>1</cast_shadows>
       <attenuation>
         <range>1000</range>
@@ -33,7 +33,7 @@
       <pose>0 0 20 0 -0 0</pose>
       <diffuse>255 255 255 1</diffuse>
       <specular>0.3 0.3 0.3 1</specular>
-      <direction>0.5 0.1 -1</direction>
+      <direction>0.5 -0.5 -1</direction>
       <cast_shadows>1</cast_shadows>
       <attenuation>
         <range>1000</range>
@@ -46,7 +46,7 @@
       <pose>0 0 20 0 -0 0</pose>
       <diffuse>255 255 255 1</diffuse>
       <specular>0.3 0.3 0.3 1</specular>
-      <direction>0.5 0.1 -1</direction>
+      <direction>-0.5 -0.5 -1</direction>
       <cast_shadows>1</cast_shadows>
       <attenuation>
         <range>1000</range>
@@ -65,5 +65,176 @@
       <name>robocon2026_field</name>
       <pose>0 0 0.01 0 -0 0</pose>
     </include>
-  </world>
+  
+    <include>
+      <uri>model://BLUE2_001</uri>
+      <name>BLUE2_001</name>
+      <pose>-7.20 -4.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_002</uri>
+      <name>BLUE2_002</name>
+      <pose>-7.20 -3.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_003</uri>
+      <name>BLUE2_003</name>
+      <pose>-7.20 -3.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_004</uri>
+      <name>BLUE2_004</name>
+      <pose>-7.20 -2.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_005</uri>
+      <name>BLUE2_005</name>
+      <pose>-7.20 -2.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_006</uri>
+      <name>BLUE2_006</name>
+      <pose>-7.20 -1.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_007</uri>
+      <name>BLUE2_007</name>
+      <pose>-7.20 -1.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_008</uri>
+      <name>BLUE2_008</name>
+      <pose>-7.20 -0.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_009</uri>
+      <name>BLUE2_009</name>
+      <pose>-7.20 0.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_010</uri>
+      <name>BLUE2_010</name>
+      <pose>-7.20 0.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_011</uri>
+      <name>BLUE2_011</name>
+      <pose>-7.20 1.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_012</uri>
+      <name>BLUE2_012</name>
+      <pose>-7.20 1.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_013</uri>
+      <name>BLUE2_013</name>
+      <pose>-7.20 2.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_014</uri>
+      <name>BLUE2_014</name>
+      <pose>-7.20 2.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BLUE2_015</uri>
+      <name>BLUE2_015</name>
+      <pose>-7.20 3.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://blue_fake_KFS</uri>
+      <name>blue_fake_KFS</name>
+      <pose>-7.20 3.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://blue_R1_KFS</uri>
+      <name>blue_R1_KFS</name>
+      <pose>-7.20 4.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_001</uri>
+      <name>RED2_001</name>
+      <pose>-7.70 -4.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_002</uri>
+      <name>RED2_002</name>
+      <pose>-7.70 -3.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_003</uri>
+      <name>RED2_003</name>
+      <pose>-7.70 -3.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_004</uri>
+      <name>RED2_004</name>
+      <pose>-7.70 -2.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_005</uri>
+      <name>RED2_005</name>
+      <pose>-7.70 -2.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_006</uri>
+      <name>RED2_006</name>
+      <pose>-7.70 -1.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_007</uri>
+      <name>RED2_007</name>
+      <pose>-7.70 -1.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_008</uri>
+      <name>RED2_008</name>
+      <pose>-7.70 -0.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_009</uri>
+      <name>RED2_009</name>
+      <pose>-7.70 0.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_010</uri>
+      <name>RED2_010</name>
+      <pose>-7.70 0.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_011</uri>
+      <name>RED2_011</name>
+      <pose>-7.70 1.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_012</uri>
+      <name>RED2_012</name>
+      <pose>-7.70 1.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_013</uri>
+      <name>RED2_013</name>
+      <pose>-7.70 2.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_014</uri>
+      <name>RED2_014</name>
+      <pose>-7.70 2.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RED2_015</uri>
+      <name>RED2_015</name>
+      <pose>-7.70 3.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://red_fake_KFS</uri>
+      <name>red_fake_KFS</name>
+      <pose>-7.70 3.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://red_R1_KFS</uri>
+      <name>red_R1_KFS</name>
+      <pose>-7.70 4.00 0.5 0 0 0</pose>
+    </include>
+</world>
 </sdf>

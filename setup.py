@@ -38,11 +38,11 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         
-    ], ['resource', 'launch', 'urdf', 'config', 'rviz', 'models', 'worlds', 'meshes']),
+    ], ['resource', 'launch', 'config', 'rviz', 'models', 'worlds']),
     
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='rc3',
+    maintainer='edmounds',
     maintainer_email='edmounds@163.com',
     description='TODO: Package description',
     license='TODO: License declaration',
