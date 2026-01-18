@@ -1,0 +1,16 @@
+material RoboCon/BlueFakeKFS07
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture BlueFakeKFS07.png
+        tex_address_mode border
+        tex_border_colour 0.208 0.227 0.553 1.0
+        scale 1.0 1.0
+      }
+    }
+  }
+}

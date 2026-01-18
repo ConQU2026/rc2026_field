@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.6">
+  <model name="BlueTrueKFS06">
+    <static>false</static>
+    <link name="link">
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.083</ixx> <ixy>0.0</ixy> <ixz>0.0</ixz>
+          <iyy>0.083</iyy> <iyz>0.0</iyz>
+          <izz>0.083</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box><size>0.35 0.35 0.35</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.35 0.35 0.35</size></box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://BlueTrueKFS06/materials/scripts</uri>
+            <uri>model://BlueTrueKFS06/materials/textures</uri>
+            <name>RoboCon/BlueTrueKFS06</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

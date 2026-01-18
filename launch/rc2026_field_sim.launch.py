@@ -24,12 +24,6 @@ def generate_launch_description():
     #     arguments=['-d', rviz_config_path],
     #     parameters=[{'use_sim_time': True}]
     #)
-
-
-
-
-
-
     ld = LaunchDescription()
 
     ld.add_action(AppendEnvironmentVariable(
@@ -45,9 +39,5 @@ def generate_launch_description():
             'extra_gazebo_args': '--verbose',
         }.items(),
     ))
-
-
-
-
-
+    
     return ld

@@ -5,14 +5,7 @@ import os
 package_name = 'rc2026_field'
 
 def package_files(data_files, directory_list):
-    '''
-    Collects all files in the specified directories and prepares them for installation.
-    Args:
-        data_files (list): List to append the collected files to.
-        directory_list (list): List of directories to search for files.
-    Returns:
-        list: Updated data_files list with collected files.
-    '''
+
     paths_dict = {}
     for directory in directory_list:
         for (path, directories, filenames) in os.walk(directory):
