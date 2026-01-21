@@ -4,7 +4,7 @@ import shutil
 # Base paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODELS_DIR = os.path.join(BASE_DIR, 'models')
-IMG_DIR = os.path.join(MODELS_DIR, 'img')
+IMG_DIR = os.path.join(BASE_DIR, 'KFS_imgs')
 
 # Templates
 MODEL_CONFIG_TEMPLATE = """<?xml version="1.0"?>

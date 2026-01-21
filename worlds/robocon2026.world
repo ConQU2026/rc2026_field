@@ -65,176 +65,316 @@
       <name>robocon2026_field</name>
       <pose>0 0 0.01 0 -0 0</pose>
     </include>
-  
     <include>
-      <uri>model://BlueTrueKFS01</uri>
-      <name>BlueTrueKFS01</name>
-      <pose>-7.20 -4.00 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS02</uri>
-      <name>BlueTrueKFS02</name>
-      <pose>-7.20 -3.50 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS03</uri>
-      <name>BlueTrueKFS03</name>
-      <pose>-7.20 -3.00 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS04</uri>
-      <name>BlueTrueKFS04</name>
-      <pose>-7.20 -2.50 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS05</uri>
-      <name>BlueTrueKFS05</name>
-      <pose>-7.20 -2.00 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS06</uri>
-      <name>BlueTrueKFS06</name>
-      <pose>-7.20 -1.50 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS07</uri>
-      <name>BlueTrueKFS07</name>
-      <pose>-7.20 -1.00 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS08</uri>
-      <name>BlueTrueKFS08</name>
-      <pose>-7.20 -0.50 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS09</uri>
-      <name>BlueTrueKFS09</name>
-      <pose>-7.20 0.00 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS10</uri>
-      <name>BlueTrueKFS10</name>
-      <pose>-7.20 0.50 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS11</uri>
-      <name>BlueTrueKFS11</name>
-      <pose>-7.20 1.00 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS12</uri>
-      <name>BlueTrueKFS12</name>
-      <pose>-7.20 1.50 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS13</uri>
-      <name>BlueTrueKFS13</name>
-      <pose>-7.20 2.00 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS14</uri>
-      <name>BlueTrueKFS14</name>
-      <pose>-7.20 2.50 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueTrueKFS15</uri>
-      <name>BlueTrueKFS15</name>
-      <pose>-7.20 3.00 0.5 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://BlueFakeKFS01</uri>
-      <name>BlueFakeKFS01</name>
-      <pose>-7.20 3.50 0.5 0 0 0</pose>
+      <uri>model://RedR1KFS</uri>
+      <name>RedR1KFS</name>
+      <pose>-7.0 -0.5 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://BlueR1KFS</uri>
       <name>BlueR1KFS</name>
-      <pose>-7.20 4.00 0.5 0 0 0</pose>
+      <pose>-7.0 0.5 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS01</uri>
       <name>RedTrueKFS01</name>
-      <pose>-7.70 -4.00 0.5 0 0 0</pose>
+      <pose>-7.5 -3.50 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS02</uri>
       <name>RedTrueKFS02</name>
-      <pose>-7.70 -3.50 0.5 0 0 0</pose>
+      <pose>-7.5 -3.00 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS03</uri>
       <name>RedTrueKFS03</name>
-      <pose>-7.70 -3.00 0.5 0 0 0</pose>
+      <pose>-7.5 -2.50 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS04</uri>
       <name>RedTrueKFS04</name>
-      <pose>-7.70 -2.50 0.5 0 0 0</pose>
+      <pose>-7.5 -2.00 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS05</uri>
       <name>RedTrueKFS05</name>
-      <pose>-7.70 -2.00 0.5 0 0 0</pose>
+      <pose>-7.5 -1.50 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS06</uri>
       <name>RedTrueKFS06</name>
-      <pose>-7.70 -1.50 0.5 0 0 0</pose>
+      <pose>-7.5 -1.00 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS07</uri>
       <name>RedTrueKFS07</name>
-      <pose>-7.70 -1.00 0.5 0 0 0</pose>
+      <pose>-7.5 -0.50 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS08</uri>
       <name>RedTrueKFS08</name>
-      <pose>-7.70 -0.50 0.5 0 0 0</pose>
+      <pose>-7.5 0.00 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS09</uri>
       <name>RedTrueKFS09</name>
-      <pose>-7.70 0.00 0.5 0 0 0</pose>
+      <pose>-7.5 0.50 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS10</uri>
       <name>RedTrueKFS10</name>
-      <pose>-7.70 0.50 0.5 0 0 0</pose>
+      <pose>-7.5 1.00 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS11</uri>
       <name>RedTrueKFS11</name>
-      <pose>-7.70 1.00 0.5 0 0 0</pose>
+      <pose>-7.5 1.50 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS12</uri>
       <name>RedTrueKFS12</name>
-      <pose>-7.70 1.50 0.5 0 0 0</pose>
+      <pose>-7.5 2.00 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS13</uri>
       <name>RedTrueKFS13</name>
-      <pose>-7.70 2.00 0.5 0 0 0</pose>
+      <pose>-7.5 2.50 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS14</uri>
       <name>RedTrueKFS14</name>
-      <pose>-7.70 2.50 0.5 0 0 0</pose>
+      <pose>-7.5 3.00 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedTrueKFS15</uri>
       <name>RedTrueKFS15</name>
-      <pose>-7.70 3.00 0.5 0 0 0</pose>
+      <pose>-7.5 3.50 0.5 0 0 0</pose>
     </include>
     <include>
       <uri>model://RedFakeKFS01</uri>
       <name>RedFakeKFS01</name>
-      <pose>-7.70 3.50 0.5 0 0 0</pose>
+      <pose>-8.0 -3.50 0.5 0 0 0</pose>
     </include>
     <include>
-      <uri>model://RedR1KFS</uri>
-      <name>RedR1KFS</name>
-      <pose>-7.70 4.00 0.5 0 0 0</pose>
+      <uri>model://RedFakeKFS02</uri>
+      <name>RedFakeKFS02</name>
+      <pose>-8.0 -3.00 0.5 0 0 0</pose>
     </include>
+    <include>
+      <uri>model://RedFakeKFS03</uri>
+      <name>RedFakeKFS03</name>
+      <pose>-8.0 -2.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS04</uri>
+      <name>RedFakeKFS04</name>
+      <pose>-8.0 -2.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS05</uri>
+      <name>RedFakeKFS05</name>
+      <pose>-8.0 -1.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS06</uri>
+      <name>RedFakeKFS06</name>
+      <pose>-8.0 -1.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS07</uri>
+      <name>RedFakeKFS07</name>
+      <pose>-8.0 -0.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS08</uri>
+      <name>RedFakeKFS08</name>
+      <pose>-8.0 0.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS09</uri>
+      <name>RedFakeKFS09</name>
+      <pose>-8.0 0.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS10</uri>
+      <name>RedFakeKFS10</name>
+      <pose>-8.0 1.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS11</uri>
+      <name>RedFakeKFS11</name>
+      <pose>-8.0 1.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS12</uri>
+      <name>RedFakeKFS12</name>
+      <pose>-8.0 2.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS13</uri>
+      <name>RedFakeKFS13</name>
+      <pose>-8.0 2.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS14</uri>
+      <name>RedFakeKFS14</name>
+      <pose>-8.0 3.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS15</uri>
+      <name>RedFakeKFS15</name>
+      <pose>-8.0 3.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS01</uri>
+      <name>BlueTrueKFS01</name>
+      <pose>-8.5 -3.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS02</uri>
+      <name>BlueTrueKFS02</name>
+      <pose>-8.5 -3.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS03</uri>
+      <name>BlueTrueKFS03</name>
+      <pose>-8.5 -2.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS04</uri>
+      <name>BlueTrueKFS04</name>
+      <pose>-8.5 -2.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS05</uri>
+      <name>BlueTrueKFS05</name>
+      <pose>-8.5 -1.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS06</uri>
+      <name>BlueTrueKFS06</name>
+      <pose>-8.5 -1.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS07</uri>
+      <name>BlueTrueKFS07</name>
+      <pose>-8.5 -0.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS08</uri>
+      <name>BlueTrueKFS08</name>
+      <pose>-8.5 0.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS09</uri>
+      <name>BlueTrueKFS09</name>
+      <pose>-8.5 0.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS10</uri>
+      <name>BlueTrueKFS10</name>
+      <pose>-8.5 1.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS11</uri>
+      <name>BlueTrueKFS11</name>
+      <pose>-8.5 1.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS12</uri>
+      <name>BlueTrueKFS12</name>
+      <pose>-8.5 2.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS13</uri>
+      <name>BlueTrueKFS13</name>
+      <pose>-8.5 2.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS14</uri>
+      <name>BlueTrueKFS14</name>
+      <pose>-8.5 3.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS15</uri>
+      <name>BlueTrueKFS15</name>
+      <pose>-8.5 3.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS01</uri>
+      <name>BlueFakeKFS01</name>
+      <pose>-9.0 -3.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS02</uri>
+      <name>BlueFakeKFS02</name>
+      <pose>-9.0 -3.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS03</uri>
+      <name>BlueFakeKFS03</name>
+      <pose>-9.0 -2.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS04</uri>
+      <name>BlueFakeKFS04</name>
+      <pose>-9.0 -2.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS05</uri>
+      <name>BlueFakeKFS05</name>
+      <pose>-9.0 -1.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS06</uri>
+      <name>BlueFakeKFS06</name>
+      <pose>-9.0 -1.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS07</uri>
+      <name>BlueFakeKFS07</name>
+      <pose>-9.0 -0.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS08</uri>
+      <name>BlueFakeKFS08</name>
+      <pose>-9.0 0.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS09</uri>
+      <name>BlueFakeKFS09</name>
+      <pose>-9.0 0.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS10</uri>
+      <name>BlueFakeKFS10</name>
+      <pose>-9.0 1.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS11</uri>
+      <name>BlueFakeKFS11</name>
+      <pose>-9.0 1.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS12</uri>
+      <name>BlueFakeKFS12</name>
+      <pose>-9.0 2.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS13</uri>
+      <name>BlueFakeKFS13</name>
+      <pose>-9.0 2.50 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS14</uri>
+      <name>BlueFakeKFS14</name>
+      <pose>-9.0 3.00 0.5 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS15</uri>
+      <name>BlueFakeKFS15</name>
+      <pose>-9.0 3.50 0.5 0 0 0</pose>
+    </include>
+
 </world>
 </sdf>
