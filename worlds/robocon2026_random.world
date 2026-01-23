@@ -1,0 +1,149 @@
+<sdf version='1.7'>
+  <world name='robocon2026_world_scene'>
+    <model name='ground_plane'>
+      <static>1</static>
+    </model>
+    <light name='sun_main1' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>0.5 0.5 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <light name='sun_main2' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>-0.5 0.5 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <light name='sun_main3' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>0.5 -0.5 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <light name='sun_main4' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>-0.5 -0.5 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <scene>
+      <ambient>0.2 0.2 0.2 1</ambient>
+      <background>0.4 0.4 0.4 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <include>
+      <uri>model://robocon2026_world</uri>
+      <name>robocon2026_field</name>
+      <pose>0 0 0.01 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedR1KFS</uri>
+      <name>RedR1KFS</name>
+      <pose>-1.4000 3.0000 5.2000 0 0 0.0000</pose>
+    </include>
+    <include>
+      <uri>model://RedR1KFS</uri>
+      <name>RedR1KFS_2</name>
+      <pose>2.2000 1.8000 5.8000 0 0 0.0000</pose>
+    </include>
+    <include>
+      <uri>model://RedR1KFS</uri>
+      <name>RedR1KFS_3</name>
+      <pose>2.2000 3.0000 5.8000 0 0 0.0000</pose>
+    </include>
+    <include>
+      <uri>model://RedTrueKFS08</uri>
+      <name>RedTrueKFS08</name>
+      <pose>-0.2000 1.8000 5.4000 0 0 0.0000</pose>
+    </include>
+    <include>
+      <uri>model://RedTrueKFS06</uri>
+      <name>RedTrueKFS06</name>
+      <pose>-0.2000 3.0000 5.4000 0 0 0.0000</pose>
+    </include>
+    <include>
+      <uri>model://RedTrueKFS02</uri>
+      <name>RedTrueKFS02</name>
+      <pose>-1.4000 1.8000 5.2000 0 0 0.0000</pose>
+    </include>
+    <include>
+      <uri>model://RedTrueKFS03</uri>
+      <name>RedTrueKFS03</name>
+      <pose>1.0000 1.8000 5.6000 0 0 0.0000</pose>
+    </include>
+    <include>
+      <uri>model://RedFakeKFS03</uri>
+      <name>RedFakeKFS03</name>
+      <pose>-0.2000 4.2000 5.4000 0 0 0.0000</pose>
+    </include>
+    <include>
+      <uri>model://BlueR1KFS</uri>
+      <name>BlueR1KFS</name>
+      <pose>1.0000 -4.2000 5.6000 0 0 3.1416</pose>
+    </include>
+    <include>
+      <uri>model://BlueR1KFS</uri>
+      <name>BlueR1KFS_2</name>
+      <pose>1.0000 -1.8000 5.6000 0 0 3.1416</pose>
+    </include>
+    <include>
+      <uri>model://BlueR1KFS</uri>
+      <name>BlueR1KFS_3</name>
+      <pose>-0.2000 -4.2000 5.4000 0 0 3.1416</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS11</uri>
+      <name>BlueTrueKFS11</name>
+      <pose>-1.4000 -1.8000 5.2000 0 0 3.1416</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS09</uri>
+      <name>BlueTrueKFS09</name>
+      <pose>-0.2000 -3.0000 5.4000 0 0 3.1416</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS12</uri>
+      <name>BlueTrueKFS12</name>
+      <pose>2.2000 -1.8000 5.8000 0 0 3.1416</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS01</uri>
+      <name>BlueTrueKFS01</name>
+      <pose>2.2000 -3.0000 5.8000 0 0 3.1416</pose>
+    </include>
+    <include>
+      <uri>model://BlueFakeKFS06</uri>
+      <name>BlueFakeKFS06</name>
+      <pose>-1.4000 -3.0000 5.2000 0 0 3.1416</pose>
+    </include>
+</world>
+</sdf>
