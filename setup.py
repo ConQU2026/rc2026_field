@@ -30,8 +30,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        
-    ], ['resource', 'launch', 'config', 'rviz', 'models', 'worlds']),
+    ], ['resource', 'launch', 'urdf', 'config', 'rviz', 'meshes', 'models', 'worlds']),
     
     install_requires=['setuptools'],
     zip_safe=True,
