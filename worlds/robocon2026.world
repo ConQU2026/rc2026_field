@@ -1,8 +1,5 @@
 <sdf version='1.7'>
   <world name='robocon2026_world_scene'>
-    <model name='ground_plane'>
-      <static>1</static>
-    </model>
     <light name='sun_main1' type='directional'>
       <pose>0 0 20 0 -0 0</pose>
       <diffuse>255 255 255 1</diffuse>

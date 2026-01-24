@@ -13,7 +13,7 @@ def generate_launch_description():
     rc2026_field_pkg = FindPackageShare('rc2026_field')
     gz_launch_path = PathJoinSubstitution([gazebo_ros_pkg, 'launch', 'gazebo.launch.py'])
     
-    world_path = PathJoinSubstitution([rc2026_field_pkg, 'worlds', 'robocon2026_random.world'])
+    world_path = PathJoinSubstitution([rc2026_field_pkg, 'worlds', 'robocon2026_random_MF.world'])
     rviz_config_path = PathJoinSubstitution([rc2026_field_pkg, 'rviz', 'field.rviz'])
 
     # rviz_node = Node(
@@ -24,14 +24,12 @@ def generate_launch_description():
     #     arguments=['-d', rviz_config_path],
     #     parameters=[{'use_sim_time': True}]
     #)
-    ld = LaunchDescription()
 
+    ld = LaunchDescription()
     ld.add_action(AppendEnvironmentVariable(
         name='GAZEBO_MODEL_PATH',
         value=PathJoinSubstitution([rc2026_field_pkg, 'models'])
     ))
-
-
     ld.add_action(IncludeLaunchDescription(
         PythonLaunchDescriptionSource(gz_launch_path),
         launch_arguments={

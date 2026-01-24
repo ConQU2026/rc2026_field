@@ -1,0 +1,111 @@
+<sdf version='1.7'>
+  <world name='robocon2026_grid_world'>
+    <light name='sun_main1' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>0.5 0.5 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <light name='sun_main2' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>-0.5 0.5 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <light name='sun_main3' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>0.5 -0.5 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <light name='sun_main4' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <diffuse>255 255 255 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>-0.5 -0.5 -1</direction>
+      <cast_shadows>1</cast_shadows>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.01</constant>
+        <linear>0.001</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+    <scene>
+      <ambient>0.2 0.2 0.2 1</ambient>
+      <background>0.4 0.4 0.4 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <scene>
+      <ambient>0.2 0.2 0.2 1</ambient>
+      <background>0.4 0.4 0.4 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <include>
+      <uri>model://robocon2026_world</uri>
+      <name>robocon2026_field</name>
+      <pose>0 0 0.01 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS09</uri>
+      <name>BlueTrueKFS09_grid_1</name>
+      <pose>-4.2685 -0.0586 1.0000 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueR1KFS</uri>
+      <name>BlueR1KFS_grid_2</name>
+      <pose>-4.8685 -0.0734 1.0000 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedTrueKFS15</uri>
+      <name>RedTrueKFS15_grid_3</name>
+      <pose>-5.5815 -0.0229 1.0000 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedTrueKFS08</uri>
+      <name>RedTrueKFS08_grid_4</name>
+      <pose>-4.0813 -0.0334 1.5400 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueR1KFS</uri>
+      <name>BlueR1KFS_grid_5_2</name>
+      <pose>-4.6619 0.0538 1.5400 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://BlueTrueKFS02</uri>
+      <name>BlueTrueKFS02_grid_6</name>
+      <pose>-5.2835 0.1159 1.5400 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedTrueKFS13</uri>
+      <name>RedTrueKFS13_grid_7</name>
+      <pose>-4.4895 -0.0365 2.0800 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://RedR1KFS</uri>
+      <name>RedR1KFS_grid_8</name>
+      <pose>-4.6295 0.0566 2.0800 0 0 0</pose>
+    </include>
+  </world>
+</sdf>
