@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 4.2.16 LTS commit date:2025-11-17, commit time:16:05, hash:39502cae951c</authoring_tool>
     </contributor>
-    <created>2026-01-24T19:06:17</created>
-    <modified>2026-01-24T19:06:17</modified>
+    <created>2026-01-24T19:54:41</created>
+    <modified>2026-01-24T19:54:41</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -21,6 +21,12 @@
             <diffuse>
               <color sid="diffuse">0.8 0.8 0.8 1</color>
             </diffuse>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>0.3</float>
+            </transparency>
             <index_of_refraction>
               <float sid="ior">1.5</float>
             </index_of_refraction>
@@ -72,6 +78,12 @@
             <diffuse>
               <color sid="diffuse">0.95 0.95 0.95 1</color>
             </diffuse>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>0.3</float>
+            </transparency>
             <index_of_refraction>
               <float sid="ior">1.49</float>
             </index_of_refraction>
@@ -121,7 +133,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">0 0.01341833 1.006034 1</color>
+              <color sid="diffuse">0.196 0 1 1</color>
             </diffuse>
             <index_of_refraction>
               <float sid="ior">1.5</float>
@@ -1084,6 +1096,49 @@
         </polylist>
       </mesh>
     </geometry>
+    <geometry id="平面_002-mesh" name="平面.002">
+      <mesh>
+        <source id="平面_002-mesh-positions">
+          <float_array id="平面_002-mesh-positions-array" count="12">-1 1 0 -1 -1 0 1 1 0 1 -1 0</float_array>
+          <technique_common>
+            <accessor source="#平面_002-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="平面_002-mesh-normals">
+          <float_array id="平面_002-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#平面_002-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="平面_002-mesh-map-0">
+          <float_array id="平面_002-mesh-map-0-array" count="8">0 0 1 0 1 1 0 1</float_array>
+          <technique_common>
+            <accessor source="#平面_002-mesh-map-0-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="平面_002-mesh-vertices">
+          <input semantic="POSITION" source="#平面_002-mesh-positions"/>
+        </vertices>
+        <polylist count="1">
+          <input semantic="VERTEX" source="#平面_002-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#平面_002-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#平面_002-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 </vcount>
+          <p>0 0 0 1 0 1 3 0 2 2 0 3</p>
+        </polylist>
+      </mesh>
+    </geometry>
   </library_geometries>
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
@@ -1282,6 +1337,10 @@
             </technique_common>
           </bind_material>
         </instance_geometry>
+      </node>
+      <node id="平面_005" name="平面.005" type="NODE">
+        <matrix sid="transform">10 0 0 -1.22469e-7 0 10 0 -0.8110726 0 0 10 -0.02246772 0 0 0 1</matrix>
+        <instance_geometry url="#平面_002-mesh" name="平面.005"/>
       </node>
     </visual_scene>
   </library_visual_scenes>
