@@ -64,6 +64,7 @@
       <uri>model://robocon2026_world</uri>
       <name>robocon2026_field</name>
       <pose>0 0 0.01 0 -0 0</pose>
+      <static>true</static>
     </include>
     <include>
       <uri>model://RedR1KFS</uri>

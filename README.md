@@ -28,6 +28,7 @@ ros2 launch rc2026_field rc2026_field_sim.launch.py
 # TODO
 - 功能增加: 场地每次加载自动随机按照规则在梅林随机放置KFS, 支持yaml简单配置
 - 功能增加: 场地每次加载自动随机按照规则在武馆九宫格随机放置KFS, 支持yaml简单配置
+    -  精简上传的代码, 然后改成config中进行配置, 精简坐标
 
 # 调整说明
 
