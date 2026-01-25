@@ -46,6 +46,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'kfs_manager = rc2026_field.kfs_manager:main',
+            'field_gui = rc2026_field.field_gui:main',
         ],
     },
 )
