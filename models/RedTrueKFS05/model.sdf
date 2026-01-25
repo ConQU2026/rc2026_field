@@ -18,7 +18,10 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <box><size>0.35 0.35 0.35</size></box>
+          <mesh>
+            <uri>model://RedTrueKFS05/meshes/model.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
         </geometry>
         <material>
           <script>

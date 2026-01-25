@@ -5,32 +5,11 @@
       <author>Blender User</author>
       <authoring_tool>Blender 4.2.16 LTS commit date:2025-11-17, commit time:16:05, hash:39502cae951c</authoring_tool>
     </contributor>
-    <created>2026-01-18T20:49:58</created>
-    <modified>2026-01-18T20:49:58</modified>
+    <created>2026-01-24T19:54:41</created>
+    <modified>2026-01-24T19:54:41</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
-  <library_cameras>
-    <camera id="摄像机-camera" name="摄像机">
-      <optics>
-        <technique_common>
-          <perspective>
-            <xfov sid="xfov">39.59775</xfov>
-            <aspect_ratio>1.777778</aspect_ratio>
-            <znear sid="znear">0.1</znear>
-            <zfar sid="zfar">1000</zfar>
-          </perspective>
-        </technique_common>
-      </optics>
-      <extra>
-        <technique profile="blender">
-          <shiftx sid="shiftx" type="float">0</shiftx>
-          <shifty sid="shifty" type="float">0</shifty>
-          <dof_distance sid="dof_distance" type="float">10</dof_distance>
-        </technique>
-      </extra>
-    </camera>
-  </library_cameras>
   <library_effects>
     <effect id="材质_004-effect">
       <profile_COMMON>
@@ -42,6 +21,12 @@
             <diffuse>
               <color sid="diffuse">0.8 0.8 0.8 1</color>
             </diffuse>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>0.3</float>
+            </transparency>
             <index_of_refraction>
               <float sid="ior">1.5</float>
             </index_of_refraction>
@@ -93,6 +78,12 @@
             <diffuse>
               <color sid="diffuse">0.95 0.95 0.95 1</color>
             </diffuse>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>0.3</float>
+            </transparency>
             <index_of_refraction>
               <float sid="ior">1.49</float>
             </index_of_refraction>
@@ -142,7 +133,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">0 0.01341833 1.006034 1</color>
+              <color sid="diffuse">0.196 0 1 1</color>
             </diffuse>
             <index_of_refraction>
               <float sid="ior">1.5</float>
@@ -1346,10 +1337,6 @@
             </technique_common>
           </bind_material>
         </instance_geometry>
-      </node>
-      <node id="摄像机" name="摄像机" type="NODE">
-        <matrix sid="transform">-0.05927181 -0.8878158 0.4563662 2.175903 0.1143479 -0.4601991 -0.8804211 -8.526485 0.991671 3.57606e-7 0.1287967 1.560253 0 0 0 1</matrix>
-        <instance_camera url="#摄像机-camera"/>
       </node>
       <node id="平面_005" name="平面.005" type="NODE">
         <matrix sid="transform">10 0 0 -1.22469e-7 0 10 0 -0.8110726 0 0 10 -0.02246772 0 0 0 1</matrix>

@@ -31,7 +31,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         
-    ], ['resource', 'launch', 'config', 'rviz', 'models', 'worlds']),
+    ], ['resource', 'launch', 'config', 'models', 'worlds']),
     
     install_requires=['setuptools'],
     zip_safe=True,
@@ -46,6 +46,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'kfs_manager = rc2026_field.kfs_manager:main',
+            'field_gui = rc2026_field.field_gui:main',
         ],
     },
 )

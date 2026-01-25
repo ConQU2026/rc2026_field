@@ -7,8 +7,7 @@ material RoboCon/BlueTrueKFS02
       texture_unit
       {
         texture BlueTrueKFS02.png
-        tex_address_mode border
-        tex_border_colour 0.208 0.227 0.553 1.0
+        tex_address_mode clamp
         scale 1.0 1.0
       }
     }
