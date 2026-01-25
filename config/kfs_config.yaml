@@ -1,15 +1,39 @@
-# KFS Configuration
-
-# Weapon Count (Initial)
+# 武器数量
 red_weapon_count: 3 # 红方武器数量
-blue_weapon_count: 4 # 蓝方武器数量
+blue_weapon_count: 3 # 蓝方武器数量
 
+# -1: 每次reset使用随机种子
+# 其他正整数: 使用固定种子，便于调试复现
+meilin_seed: -1
+
+# 手动梅林模式配置
+# 开启后跳过随机生成，按以下配置手动放置KFS到梅林区1-12号位置
+# 数组长度应<=8 (3个R1 + 4个True + 1个Fake)
+manual_meilin:
+  enabled: false
+  # red: []   
+  # blue: []  
+  red: ["RedR1KFS", "RedR1KFS_2"]
+  blue: ["BlueR1KFS", "BlueR1KFS_2"]
+  # model_id 以及场地id分布参考建`API.md`
 inventory:
   num_r1: 3 # R1 KFS数量
   num_r2_true: 3 # R2 KFS数量
   num_fake: 1 # FAKE KFS数量
 
-# Merlin Forest Coordinates (1-12)
+# 九宫格KFS生成部分参数配置
+grid:
+  base_x: -4.8 # 九宫格中心基准X坐标 (米)
+  base_y: 0.0 # 九宫格中心基准Y坐标 (米)
+  base_z_bottom: 1.0 # 底部高度 (米)
+  pitch_x: 0.54 # X轴方向间距 (米)
+  pitch_z: 0.54 # Z轴方向间距 (米)
+  random_range_x: 0.22 # X轴随机偏移范围 (米)
+  random_range_y: 0.06 # Y轴随机偏移范围 (米)
+  random_range_yaw_deg: 30.0 # Yaw旋转随机范围 (度)
+
+
+# 梅林KFS生成对应坐标
 meilin:
   red:
     1: [2.2000, 1.8000, 0.7500]
@@ -37,18 +61,6 @@ meilin:
     10: [-1.4000, -4.2000, 0.5500]
     11: [-1.4000, -3.0000, 0.7500]
     12: [-1.4000, -1.8000, 0.5500]
-
-# 九宫格KFS生成部分参数配置
-grid:
-  base_x: -4.8 # 九宫格中心基准X坐标 (米)
-  base_y: 0.0 # 九宫格中心基准Y坐标 (米)
-  base_z_bottom: 1.0 # 底部高度 (米)
-  pitch_x: 0.54 # X轴方向间距 (米)
-  pitch_z: 0.54 # Z轴方向间距 (米)
-  random_range_x: 0.22 # X轴随机偏移范围 (米)
-  random_range_y: 0.06 # Y轴随机偏移范围 (米)
-  random_range_yaw_deg: 30.0 # Yaw旋转随机范围 (度)
-
 
 
 models:

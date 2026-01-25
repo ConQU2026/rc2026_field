@@ -10,6 +10,7 @@ import threading
 import time
 import signal
 import sys
+import yaml
 
 
 class FieldGUI(Node):
@@ -38,9 +39,23 @@ class FieldGUI(Node):
         self.client_reset_ = self.create_client(Trigger, '/simulation/reset_kfs')
         
         # 状态初始化
-        self.status_data_ = {"red_weapon_count": 0, "blue_weapon_count": 0, "placements": {}}
+        self.status_data_ = {"red_weapon_count": 0, "blue_weapon_count": 0, "placements": {}, "current_seed": -1}
         self.selected_team_ = ttk.StringVar(value="none") 
-        self.buttons_ = {} 
+        self.buttons_ = {}
+        
+        # 加载配置文件获取初始值
+        self.declare_parameter('config_path', '')
+        config_path = self.get_parameter('config_path').get_parameter_value().string_value
+        if config_path:
+            try:
+                with open(config_path, 'r') as f:
+                    config = yaml.safe_load(f)
+                self.status_data_['red_weapon_count'] = config.get('red_weapon_count', 3)
+                self.status_data_['blue_weapon_count'] = config.get('blue_weapon_count', 3)
+                self.status_data_['current_seed'] = config.get('meilin_seed', -1)
+                self.get_logger().info(f"已加载初始配置: 种子={self.status_data_['current_seed']}")
+            except Exception as e:
+                self.get_logger().warn(f"加载配置失败: {e}")
         
         # 构建界面
         self.create_widgets()
@@ -52,12 +67,16 @@ class FieldGUI(Node):
         control_frame.pack(fill="x", padx=5, pady=5)
         
         ttk.Button(control_frame, text="重置 / 生成", command=self.call_reset, bootstyle=WARNING).pack(side="left", padx=5, pady=5)
-
+        ttk.Button(control_frame, text="刷新配置", command=self.call_refresh_config, bootstyle=INFO).pack(side="left", padx=5, pady=5)
         
-        self.lbl_weapon_red = ttk.Label(control_frame, text="红方: --", font=("Helvetica", 12, "bold"), bootstyle=DANGER)
+        r_init = self.status_data_.get('red_weapon_count', '--')
+        b_init = self.status_data_.get('blue_weapon_count', '--')
+        seed_init = self.status_data_.get('current_seed', -1)
+        
+        self.lbl_weapon_red = ttk.Label(control_frame, text=f"红方: {r_init}", font=("Helvetica", 12, "bold"), bootstyle=DANGER)
         self.lbl_weapon_red.pack(side="left", padx=10)
         
-        self.lbl_weapon_blue = ttk.Label(control_frame, text="蓝方: --", font=("Helvetica", 12, "bold"), bootstyle=PRIMARY)
+        self.lbl_weapon_blue = ttk.Label(control_frame, text=f"蓝方: {b_init}", font=("Helvetica", 12, "bold"), bootstyle=PRIMARY)
         self.lbl_weapon_blue.pack(side="left", padx=10)
         
         # 队伍选择
@@ -67,6 +86,12 @@ class FieldGUI(Node):
         ttk.Radiobutton(team_frame, text="无", variable=self.selected_team_, value="none").pack(side="left", padx=10)
         ttk.Radiobutton(team_frame, text="红队", variable=self.selected_team_, value="red").pack(side="left", padx=10)
         ttk.Radiobutton(team_frame, text="蓝队", variable=self.selected_team_, value="blue").pack(side="left", padx=10)
+        
+        # 种子显示和复制按钮
+        self.current_seed_value_ = seed_init
+        ttk.Button(team_frame, text="复制种子", command=self.copy_seed, bootstyle=SECONDARY).pack(side="right", padx=5, pady=5)
+        self.lbl_seed = ttk.Label(team_frame, text=f"种子: {seed_init}", font=("Helvetica", 10), bootstyle=INFO)
+        self.lbl_seed.pack(side="right", padx=10)
         
         # 配置 / 模式
         self.is_full_sim = ttk.BooleanVar(value=False)
@@ -150,6 +175,19 @@ class FieldGUI(Node):
         self.client_reset_.call_async(req)
         self.get_logger().info("已发送重置请求...")
 
+    def call_refresh_config(self):
+        """发送刷新配置事件。"""
+        msg = {"action": "refresh_config"}
+        self.pub_event_.publish(String(data=json.dumps(msg)))
+        self.get_logger().info("已发送刷新配置请求...")
+
+    def copy_seed(self):
+        """复制当前种子到剪贴板。"""
+        self.root.clipboard_clear()
+        self.root.clipboard_append(str(self.current_seed_value_))
+        self.get_logger().info(f"已复制种子: {self.current_seed_value_}")
+
+
     def update_status(self, msg):
         """根据 ROS 消息更新 GUI 状态。"""
         try:
@@ -164,8 +202,12 @@ class FieldGUI(Node):
             # 更新武器显示
             r_count = data.get("red_weapon_count", 0)
             b_count = data.get("blue_weapon_count", 0)
+            seed = data.get("current_seed", -1)
             self.lbl_weapon_red.config(text=f"红方: {r_count}")
             self.lbl_weapon_blue.config(text=f"蓝方: {b_count}")
+            if seed != -1:
+                self.current_seed_value_ = seed
+                self.lbl_seed.config(text=f"种子: {seed}")
             
             placements = data.get("placements", {})
             

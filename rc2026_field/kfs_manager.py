@@ -47,7 +47,8 @@ class KFSManager(Node):
         self.placements_ = {} 
         self.picked_models_ = set() 
         self.destroyed_models_ = set() 
-        self.current_meilin_selection_ = {'red': [], 'blue': []} 
+        self.current_meilin_selection_ = {'red': [], 'blue': []}
+        self.current_seed_ = -1  # 当前使用的随机种子 
 
         # ROS 接口
         self.client_set_entity_state_ = self.create_client(SetEntityState, '/set_entity_state')
@@ -70,7 +71,8 @@ class KFSManager(Node):
             "red_weapon_count": self.red_weapon_count_,
             "blue_weapon_count": self.blue_weapon_count_,
             "full_simulation_mode": self.full_simulation_mode_,
-            "placements": self.placements_
+            "placements": self.placements_,
+            "current_seed": self.current_seed_
         }
         msg = String()
         msg.data = json.dumps(status)
@@ -108,9 +110,25 @@ class KFSManager(Node):
             elif 'Blue' in m: inventory['blue'].append(m)
         self.get_logger().info(f"库存统计: 红方={len(inventory['red'])}, 蓝方={len(inventory['blue'])}")
 
-        # 生成新布局
-        self.get_logger().info("生成随机布局中...")
-        assignments = self.generate_new_layout(inventory)
+        # 处理随机种子
+        seed_cfg = self.config.get('meilin_seed', -1)
+        if seed_cfg == -1:
+            self.current_seed_ = int(time.time() * 1000) % (2**31)
+        else:
+            self.current_seed_ = int(seed_cfg)
+        random.seed(self.current_seed_)
+        self.get_logger().info(f"梅林随机种子: {self.current_seed_}")
+
+        # 检查手动梅林模式
+        manual_cfg = self.config.get('manual_meilin', {})
+        if manual_cfg.get('enabled', False):
+            self.get_logger().info("手动梅林模式已启用")
+            assignments = self.generate_manual_layout(manual_cfg, models_cfg)
+        else:
+            # 生成随机布局
+            self.get_logger().info("生成随机布局中...")
+            assignments = self.generate_new_layout(inventory)
+        
         
         # 计算需要归位的KFS
         prev_models = set(self.placements_.values())
@@ -402,6 +420,44 @@ class KFSManager(Node):
         
         place_meilin_team('red', red_r1, red_true, red_fake, meilin_cfg['red'])
         place_meilin_team('blue', blue_r1, blue_true, blue_fake, meilin_cfg['blue'])
+        
+        return assignments
+
+    def generate_manual_layout(self, manual_cfg, models_cfg):
+        """根据手动配置生成梅林区 KFS 布局。
+        
+        Args:
+            manual_cfg: 手动梅林配置字典，包含 red 和 blue 列表。
+            models_cfg: 模型初始位置配置。
+            
+        Returns:
+            assignments 列表，每项包含 model, x, y, z, desc。
+        """
+        assignments = []
+        meilin_cfg = self.config['meilin']
+        
+        for team in ['red', 'blue']:
+            model_list = manual_cfg.get(team, [])
+            coords_map = meilin_cfg.get(team, {})
+            
+            for idx, model_name in enumerate(model_list[:12]):
+                block_id = idx + 1
+                pos = coords_map.get(block_id) or coords_map.get(str(block_id))
+                
+                if not pos:
+                    self.get_logger().error(f"未找到 {team} 方块 {block_id} 的坐标")
+                    continue
+                    
+                if model_name not in models_cfg:
+                    self.get_logger().error(f"无效的模型名: {model_name}")
+                    continue
+                
+                assignments.append({
+                    'model': model_name,
+                    'x': pos[0], 'y': pos[1], 'z': pos[2],
+                    'desc': f'{team}_meilin_{block_id}'
+                })
+                self.get_logger().info(f"手动放置: {model_name} -> {team}_meilin_{block_id}")
         
         return assignments
 

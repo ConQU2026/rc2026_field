@@ -21,8 +21,9 @@ pip install ttkbootstrap
 ```
 
 2. 编译项目
+推荐使用symlink方式， 因为可以直接让更改生效，无需重新编译
 ```bash
-colcon build --packages-select rc2026_field
+colcon build --symlink-install --packages-select rc2026_field
 source install/setup.bash
 ```
 
@@ -33,20 +34,26 @@ source install/setup.bash
 ros2 launch rc2026_field rc2026_field_sim_with_controller.launch.py
 ```
 
-- 仅启动场地仿真
-```bash
-ros2 launch rc2026_field rc2026_field_sim.launch.py
-```
-
 ## GUI控制功能介绍
-### 通过点击GUI的对应梅林方块可进行移除操作
-![image](./assets/controller1.png)
+
+### 简介
+该控制器支持以下功能：
+- 根据种子随机生成梅林的KFS(依据规则生成)， 也可配置文件中开启手动指定摆放方式
+- 移除梅林中的KFS， 增加己方九宫格KFS， 可通过武器攻击对方KFS
+- 九宫格支持模拟红蓝对抗， 支持控制红蓝KFS的去留， 且可以通过提供的API接口实现算法验证
+
+![image](./assets/panel.png)
+
+### 通过点击GUI中对应的梅林的格子可对KFS进行移除操作
+![image](./assets/MF.png)
 
 ### 九宫格KFS的放置
 需要先选择队伍, 然后再通过点击对应的格子执行放置本队KFS的操作
 
 武器可以用于攻击另外一队的KFS, 通过点击另一队已有KFS的格子执行攻击操作, 会消耗本队的武器数量
-![image](./assets/controller5.png)
+![image](./assets/grid.png)
+
+### 种子使用说明
 
 
 ### 全流程仿真设置说明
@@ -54,10 +61,11 @@ ros2 launch rc2026_field rc2026_field_sim.launch.py
 ## 关键配置参数
 配置文件路径: `config/kfs_config.yaml`
 
-| 参数项 | 说明 | 关键子项 |
-| :--- | :--- | :--- |
-| **inventory** | 库存配置 | `num_r1`(R1 KFS数), `num_r2_true`(R2 KFS数), `num_fake`(FAKE KFS数) |
-| **grid** | 九宫格生成 | `base_x/y`(中心坐标), `pitch_x/z`(间距), `random_range_*`(随机偏移量) |
+- 红蓝武器数量设置
+- 梅林随机种子设置
+- 是否开启手动设置梅林KFS分布
+- 九宫格KFS坐标随机化参数
+~~
 详细配置请参考配置文件内的注释。
 
 ## API说明
