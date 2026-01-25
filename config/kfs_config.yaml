@@ -6,7 +6,7 @@ blue_weapon_count: 4 # 蓝方武器数量
 
 inventory:
   num_r1: 3 # R1 KFS数量
-  num_r2_true: 4 # R2 KFS数量
+  num_r2_true: 3 # R2 KFS数量
   num_fake: 1 # FAKE KFS数量
 
 # Merlin Forest Coordinates (1-12)
@@ -45,9 +45,9 @@ grid:
   base_z_bottom: 1.0 # 底部高度 (米)
   pitch_x: 0.54 # X轴方向间距 (米)
   pitch_z: 0.54 # Z轴方向间距 (米)
-  random_range_x: 0.23 # X轴随机偏移范围 (米)
-  random_range_y: 0.10 # Y轴随机偏移范围 (米)
-  random_range_yaw_deg: 45.0 # Yaw旋转随机范围 (度)
+  random_range_x: 0.22 # X轴随机偏移范围 (米)
+  random_range_y: 0.06 # Y轴随机偏移范围 (米)
+  random_range_yaw_deg: 30.0 # Yaw旋转随机范围 (度)
 
 
 

@@ -1,15 +1,15 @@
+# API DOCUMENT
 ## 1. 场地控制与反馈
 
 ### 发送指令
-向系统发送控制指令，放置或移除 KFS。
+向controller发送控制指令
 
 *   **Topic**: `/simulation/gui_event`
 *   **Type**: `std_msgs/msg/String`
-*   **Format**: JSON 字符串
 
 #### 示例:
 
-1.  **放置 KFS (九宫格) **
+1.  **放置 KFS (九宫格)**
     ```json
     {
       "action": "place",
@@ -29,12 +29,12 @@
     ```
     *效果: 消耗一份武器。不可攻击己方。*
 
-3.  **拾取 KFS (梅林区)**
+3.  **拾取 KFS (梅林)**
     ```json
     {
       "action": "remove",
       "team": "red",
-      "target": "red_meilin_1" // 梅林区位置 (red_meilin_1 ~ 12)
+      "target": "red_meilin_1" // 梅林位置 (red_meilin_1 ~ 12)
     }
     ```
     *效果: 将该 KFS 收入"已拾取"列表，供全流程模式下的放置使用。*
@@ -43,11 +43,11 @@
     ```json
     {
       "action": "toggle_mode",
-      "value": true // true: 全流程模式 (需拾取), false: 独立模式(无需验证是否拾取KFS) 
+      "value": true // true: 全流程模式 (需在梅林拾取KFS), false: 独立模式(无需验证是否拾取KFS) 
     }
     ```
 
-### 获取状态 (Feedback)
+### 获取状态 
 获取当前场地的全局状态。
 
 *   **Topic**: `/simulation/status`

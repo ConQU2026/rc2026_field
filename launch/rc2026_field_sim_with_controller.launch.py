@@ -42,7 +42,6 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        ExtractConfigPath,
         set_model_path,
         gazebo,
         kfs_manager,
