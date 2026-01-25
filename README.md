@@ -78,7 +78,7 @@ ros2 launch rc2026_field rc2026_field_sim_with_controller.launch.py
 ## scripts目录下的脚本说明
 
 - `kill_gazebo.sh`: 用于杀掉gazebo classic的进程
-- `random_kfs_in_MF.py`: 用于随机生成梅林区的KFS
+- `random_kfs_in_MF.py`: 用于随机生成梅林区的KFS from @inkccc
 - `random_kfs_in_grid.py`: 用于随机生成九宫格的KFS
 - `random_all.py`: 用于随机生成所有KFS
 
