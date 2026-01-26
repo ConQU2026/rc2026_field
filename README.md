@@ -92,5 +92,12 @@ ros2 launch rc2026_field rc2026_field_sim_with_controller.launch.py
 - 修复dae文件材质错误
 
 
+## Contributors
+
+<a href="https://github.com/ConQU2026/rc2026_field/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ConQU2026/rc2026_field" />
+</a>
+
+
 
 
